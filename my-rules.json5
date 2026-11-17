@@ -1,0 +1,48 @@
+{
+  id: 99002,
+  name: 'CLJUMP 自建规则',
+  version: 1,
+  author: 'cl1973-hello（含 667 规则，来源 Lin-arm/GKD_subscription）',
+  supportUri: 'https://github.com/cl1973-hello/CLJUMP_subs/issues',
+  apps: [
+    {
+      id: 'com.shuqi.controller',
+      name: '书旗小说',
+      groups: [
+        {
+          key: 20001,
+          name: '阅读页广告',
+          desc: '关闭正文中的内嵌广告和短剧推荐弹窗',
+          enable: true,
+          activityIds: ['com.shuqi.reader.ShuqiReaderActivity'],
+          rules: [
+            {
+              key: 20001,
+              name: '关闭内嵌广告',
+              matches: '[vid="append_element_view_btn_container"]',
+              action: 'clickNode',
+              actionCd: 2000,
+            },
+            {
+              key: 20002,
+              name: '关闭短剧弹窗',
+              matches: '[desc="关闭"][clickable=true]',
+              action: 'clickNode',
+              actionMaximum: 1,
+              resetMatch: 'activity',
+            },
+            {
+              key: 20003,
+              name: '不再提示',
+              matches: '[text="不再提示"]',
+              action: 'clickNode',
+              actionCd: 1000,
+              actionMaximum: 1,
+              resetMatch: 'activity',
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}
