@@ -66831,5 +66831,47 @@
         },
       ],
     },
+    {
+      id: 'com.zhulishenghuo',
+      name: '住理生活',
+      groups: [
+        {
+          key: 40001,
+          name: '开屏广告',
+          desc: '无快照，按文案匹配，进入应用后 8 秒内有效',
+          enable: true,
+          matchTime: 8000,
+          rules: [
+            {
+              key: 40001,
+              name: '点击跳过',
+              matches: '[text*="跳过"]',
+              action: 'clickNode',
+              actionCd: 500,
+              actionMaximum: 5,
+              resetMatch: 'activity',
+            },
+          ],
+        },
+        {
+          key: 40002,
+          name: '摇一摇广告-强制返回',
+          desc: '检测到摇一摇提示时按返回键',
+          enable: false,
+          matchTime: 8000,
+          rules: [
+            {
+              key: 40002,
+              name: '扭动手机提示时返回',
+              matches: '[text*="扭动手机"]',
+              action: 'back',
+              actionCd: 3000,
+              actionMaximum: 1,
+              resetMatch: 'activity',
+            },
+          ],
+        },
+      ],
+    },
   ],
 }
