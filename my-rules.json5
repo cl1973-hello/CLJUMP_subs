@@ -12,7 +12,7 @@
         {
           key: 20001,
           name: '阅读页广告',
-          desc: '关闭正文中的内嵌广告和短剧推荐弹窗',
+          desc: '关闭正文中的内嵌广告及短剧推荐弹窗',
           enable: true,
           activityIds: ['com.shuqi.reader.ShuqiReaderActivity'],
           rules: [
